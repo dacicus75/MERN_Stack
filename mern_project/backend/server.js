@@ -30,11 +30,11 @@ MongoClient.connect(uri, function(err, client) {
 //   console.log("MongoDB database connection established successfully");
 // })
 
-// const exercisesRouter = require('./routes/exercises');
-// const usersRouter = require('./routes/users');
+const tasksRouter = require('./routes/tasks');
+const usersRouter = require('./routes/users');
 
-// app.use('/exercises', exercisesRouter);
-// app.use('/users', usersRouter);
+app.use('/tasks', tasksRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
